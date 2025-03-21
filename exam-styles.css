@@ -1,0 +1,365 @@
+/* Main layout and containers */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.header h1 {
+    color: #0078d4;
+    margin-bottom: 10px;
+}
+
+.header p {
+    color: #555;
+    font-size: 1.1em;
+}
+
+/* Progress tracker */
+.progress-container {
+    width: 100%;
+    height: 6px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    margin: 10px 0 20px 0;
+    overflow: hidden;
+}
+
+#progress-bar {
+    height: 100%;
+    background-color: #0078d4;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+/* Question navigation */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+#question-indicator {
+    font-size: 0.9em;
+    padding: 10px 0;
+    color: #555;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+button:hover {
+    background-color: #106ebe;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+#check-btn {
+    background-color: #107c10;
+}
+
+#check-btn:hover {
+    background-color: #0b6a0b;
+}
+
+/* Question and options styling */
+.question {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.question h2 {
+    margin-top: 0;
+    color: #0078d4;
+    font-size: 1.4em;
+}
+
+.section-tag {
+    display: inline-block;
+    background-color: #e0f2fe;
+    color: #0c4a6e;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    border-left: 3px solid #0078d4;
+}
+
+.question-text {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.question-text p {
+    margin-bottom: 10px;
+}
+
+.question-text strong {
+    font-weight: 600;
+}
+
+.options {
+    margin-bottom: 20px;
+}
+
+.option {
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: flex-start;
+}
+
+.option:hover {
+    background-color: #f0f0f0;
+    border-color: #d0d0d0;
+}
+
+.option input[type="radio"],
+.option input[type="checkbox"] {
+    margin-right: 10px;
+    margin-top: 3px;
+}
+
+.option label {
+    flex: 1;
+    cursor: pointer;
+}
+
+/* Feedback styling */
+.feedback {
+    margin-top: 8px;
+    padding: 5px 0 0 24px;
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+.feedback.correct {
+    color: #107c10;
+}
+
+.feedback.incorrect {
+    color: #d13438;
+}
+
+.feedback.missed {
+    color: #ff8c00;
+}
+
+.explanation {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f0f8ff;
+    border-left: 4px solid #0078d4;
+    border-radius: 4px;
+}
+
+.explanation h4 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #0078d4;
+}
+
+.explanation ul {
+    margin-top: 5px;
+    padding-left: 20px;
+}
+
+.explanation li {
+    margin-bottom: 5px;
+}
+
+/* Results styling */
+.results {
+    padding: 20px;
+    background-color: #f0f8ff;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.results h2 {
+    color: #0078d4;
+    margin-bottom: 15px;
+}
+
+.results p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.results h3 {
+    margin-top: 20px;
+    color: #0078d4;
+    font-size: 1.2em;
+}
+
+.section-scores {
+    text-align: left;
+    margin: 15px auto;
+    width: fit-content;
+    min-width: 300px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.section-scores li {
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.section-scores strong {
+    display: block;
+    margin-bottom: 3px;
+    color: #444;
+}
+
+#retake-btn {
+    margin-top: 20px;
+    background-color: #0078d4;
+    font-size: 16px;
+    padding: 12px 25px;
+}
+
+/* Score tracker */
+#score-tracker {
+    text-align: center;
+    background-color: #f0f8ff;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.auto-eval-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 8px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+
+.auto-eval-toggle label {
+    margin-right: 10px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+    
+    .option {
+        padding: 10px;
+    }
+    
+    button {
+        padding: 8px 15px;
+    }
+}
+
+/* Animation for feedback */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.feedback {
+    animation: fadeIn 0.3s ease-in;
+}
+
+/* Custom checkboxes and radio buttons */
+input[type="checkbox"], input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #0078d4;
+    outline: none;
+    cursor: pointer;
+    margin-right: 10px;
+    position: relative;
+    top: 2px;
+}
+
+input[type="radio"] {
+    border-radius: 50%;
+}
+
+input[type="checkbox"]:checked, input[type="radio"]:checked {
+    background-color: #0078d4;
+}
+
+input[type="checkbox"]:checked::after {
+    content: "✓";
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+}
+
+input[type="radio"]:checked::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
